@@ -3,14 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Livros</title>
-    
-    <!-- Meta tags para PWA/iPhone -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Análise Livros">
-    <meta name="theme-color" content="#667eea">
-    
+    <title>Gerador de Prompt para Análise de Livros</title>
     <style>
         * {
             margin: 0;
@@ -180,6 +173,7 @@
             
             const promptText = 'Analise o livro "' + livro + '" de "' + autor + '" e forneça os seguintes 5 tipos de análise:\n\n1. **RESUMO ESTRUTURAL**\n- Organize os principais pontos do livro em seções lógicas\n- Destaque argumentos centrais, evidências apresentadas e conclusões\n- Mantenha a estrutura original da obra\n\n2. **ANÁLISE TEMÁTICA**\n- Identifique e explore os 3-5 temas principais\n- Explique como esses temas se desenvolvem ao longo do texto\n- Mostre as conexões entre os diferentes temas\n\n3. **RESUMO POR CAPÍTULOS/SEÇÕES**\n- Faça um resumo conciso de cada capítulo ou seção principal\n- Destaque a progressão das ideias ao longo da obra\n- Inclua os pontos-chave de cada parte\n\n4. **ANÁLISE CRÍTICA**\n- Examine pontos fortes e fracos dos argumentos apresentados\n- Questione premissas quando relevante\n- Ofereça diferentes perspectivas sobre o conteúdo\n- Contextualize a obra dentro de seu campo/gênero\n\n5. **RESUMO FOCADO E APLICAÇÕES**\n- Concentre nos aspectos mais práticos e relevantes\n- Destaque insights principais que o leitor pode aplicar\n- Inclua citações marcantes ou conceitos-chave\n- Sugira para quem este livro seria mais útil\n\nMantenha cada seção clara, objetiva e acessível. Use exemplos do livro quando necessário.';
             
+            // Copiar apenas o texto do prompt para clipboard
             navigator.clipboard.writeText(promptText).then(function() {
                 const successMsg = document.getElementById('successMsg');
                 successMsg.style.display = 'block';
@@ -188,6 +182,7 @@
                     successMsg.style.display = 'none';
                 }, 3000);
             }).catch(function(err) {
+                // Fallback para navegadores mais antigos
                 const textArea = document.createElement('textarea');
                 textArea.value = promptText;
                 document.body.appendChild(textArea);
@@ -203,6 +198,7 @@
             });
         }
         
+        // Permitir pressionar Enter nos campos de input
         document.getElementById('livro').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 document.getElementById('autor').focus();
