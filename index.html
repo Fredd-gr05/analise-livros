@@ -3,219 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise de Livros</title>
+    <title>Fred's Apps Hub</title>
     
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Análise Livros">
+    <meta name="apple-mobile-web-app-title" content="Fred's Apps">
     <meta name="theme-color" content="#667eea">
-    <!-- Ícone personalizado -->
-<link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSI0MCIgZmlsbD0idXJsKCNncmFkaWVudCkiLz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjY3ZWVhIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNzY0YmEyIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHRleHQgeD0iOTAiIHk9IjExMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjcyIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+8J+TujwvdGV4dD48L3N2Zz4=">
-
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE4MCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjE4MCIgaGVpZ2h0PSIxODAiIHJ4PSI0MCIgZmlsbD0idXJsKCNncmFkaWVudCkiLz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50IiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjY3ZWVhIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNzY0YmEyIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHRleHQgeD0iOTAiIHk9IjExMCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjcyIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0iY2VudHJhbCI+🚀</text></svg>">
     
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 400px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .header h1 {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .header p {
-            color: #666;
-            font-size: 14px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        label {
-            display: block;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
-            font-size: 16px;
-        }
-        
-        input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #e1e5e9;
-            border-radius: 12px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-            background: #f8f9fa;
-        }
-        
-        input:focus {
-            outline: none;
-            border-color: #667eea;
-            background: white;
-        }
-        
-        .copy-btn {
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-            margin-top: 10px;
-        }
-        
-        .copy-btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        .copy-btn:active {
-            transform: translateY(0);
-        }
-        
-        .success-msg {
-            display: none;
-            background: #d4edda;
-            color: #155724;
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 15px;
-            text-align: center;
-            font-weight: 500;
-        }
-        
-        .example {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .example-title {
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 8px;
-        }
-        
-        .example-text {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/common.css">
 </head>
 <body>
-    <div class="container">
+    <div class="main-container">
         <div class="header">
-            <h1>📚 Análise de Livros</h1>
-            <p>Gere um prompt completo para análise detalhada</p>
+            <h1>🚀 Fred's Apps Hub</h1>
+            <p>Coleção de ferramentas úteis criadas em HTML</p>
         </div>
         
-        <div class="example">
-            <div class="example-title">Exemplo:</div>
-            <div class="example-text">
-                Livro: "Competition"<br>
-                Autor: "Michael Porter"
+        <div class="apps-grid">
+            <a href="apps/livros/" class="app-card">
+                <div class="app-icon">📚</div>
+                <div class="app-title">Compilado de Análise de Livros</div>
+                <div class="app-description">
+                    Crie documentos estruturados com múltiplos resumos de livros. Adicione livros à sua lista e gere prompts para análises completas.
+                </div>
+                <span class="app-status">Disponível</span>
+            </a>
+            
+            <div class="app-card coming-soon">
+                <div class="app-icon">📊</div>
+                <div class="app-title">Gerador de Relatórios</div>
+                <div class="app-description">
+                    Em breve: Uma ferramenta para criar relatórios profissionais com templates personalizáveis.
+                </div>
+                <span class="app-status coming-soon">Em Breve</span>
+            </div>
+            
+            <div class="app-card coming-soon">
+                <div class="app-icon">💼</div>
+                <div class="app-title">Organizador de Projetos</div>
+                <div class="app-description">
+                    Em breve: Gerencie seus projetos e tarefas de forma simples e eficiente.
+                </div>
+                <span class="app-status coming-soon">Em Breve</span>
+            </div>
+            
+            <div class="app-card coming-soon">
+                <div class="app-icon">🎯</div>
+                <div class="app-title">Calculadora de Metas</div>
+                <div class="app-description">
+                    Em breve: Defina e acompanhe suas metas pessoais e profissionais.
+                </div>
+                <span class="app-status coming-soon">Em Breve</span>
             </div>
         </div>
         
-        <form>
-            <div class="form-group">
-                <label for="livro">📖 Nome do Livro:</label>
-                <input type="text" id="livro" placeholder="Ex: Competition" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="autor">✍️ Autor:</label>
-                <input type="text" id="autor" placeholder="Ex: Michael Porter" required>
-            </div>
-            
-            <button type="button" class="copy-btn" onclick="copyPrompt()">
-                📋 Copiar Prompt Completo
-            </button>
-            
-            <div id="successMsg" class="success-msg">
-                ✅ Prompt copiado com sucesso!
-            </div>
-        </form>
+        <footer class="footer">
+            <p>Desenvolvido por Fred | <a href="https://github.com/fred/fred-apps" target="_blank">Ver no GitHub</a></p>
+        </footer>
     </div>
-
-    <script>
-        function copyPrompt() {
-            const livro = document.getElementById('livro').value.trim();
-            const autor = document.getElementById('autor').value.trim();
-            
-            if (!livro || !autor) {
-                alert('Por favor, preencha o nome do livro e do autor.');
-                return;
-            }
-            
-            const promptText = 'Analise o livro "' + livro + '" de "' + autor + '" e forneça os seguintes 5 tipos de análise:\n\n1. **RESUMO ESTRUTURAL**\n- Organize os principais pontos do livro em seções lógicas\n- Destaque argumentos centrais, evidências apresentadas e conclusões\n- Mantenha a estrutura original da obra\n\n2. **ANÁLISE TEMÁTICA**\n- Identifique e explore os 3-5 temas principais\n- Explique como esses temas se desenvolvem ao longo do texto\n- Mostre as conexões entre os diferentes temas\n\n3. **RESUMO POR CAPÍTULOS/SEÇÕES**\n- Faça um resumo conciso de cada capítulo ou seção principal\n- Destaque a progressão das ideias ao longo da obra\n- Inclua os pontos-chave de cada parte\n\n4. **ANÁLISE CRÍTICA**\n- Examine pontos fortes e fracos dos argumentos apresentados\n- Questione premissas quando relevante\n- Ofereça diferentes perspectivas sobre o conteúdo\n- Contextualize a obra dentro de seu campo/gênero\n\n5. **RESUMO FOCADO E APLICAÇÕES**\n- Concentre nos aspectos mais práticos e relevantes\n- Destaque insights principais que o leitor pode aplicar\n- Inclua citações marcantes ou conceitos-chave\n- Sugira para quem este livro seria mais útil\n\nMantenha cada seção clara, objetiva e acessível. Use exemplos do livro quando necessário.';
-            
-            navigator.clipboard.writeText(promptText).then(function() {
-                const successMsg = document.getElementById('successMsg');
-                successMsg.style.display = 'block';
-                
-                setTimeout(() => {
-                    successMsg.style.display = 'none';
-                }, 3000);
-            }).catch(function(err) {
-                const textArea = document.createElement('textarea');
-                textArea.value = promptText;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-                
-                const successMsg = document.getElementById('successMsg');
-                successMsg.style.display = 'block';
-                setTimeout(() => {
-                    successMsg.style.display = 'none';
-                }, 3000);
-            });
-        }
-        
-        document.getElementById('livro').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.getElementById('autor').focus();
-            }
-        });
-        
-        document.getElementById('autor').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                copyPrompt();
-            }
-        });
-    </script>
+    
+    <script src="assets/js/navigation.js"></script>
 </body>
 </html>
